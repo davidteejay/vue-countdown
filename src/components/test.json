@@ -1,0 +1,46 @@
+[
+  {
+    "question": "The basic difference between JavaScript and Java is\r\n",
+    "optionA": "There is no difference",
+    "optionB": "Functions are considered as fields",
+    "optionC": "Variables are specific",
+    "optionD":
+      "Functions are values, and there is no hard distinction between methods and fields\r\n",
+    "answer": "B"
+  },
+  {
+    "question": " The meaning for Augmenting classes is that",
+    "optionA": "objects inherit prototype properties even in dynamic state",
+    "optionB": "objects inherit prototype properties only in dynamic state",
+    "optionC": "objects inherit prototype properties in static state",
+    "optionD": " None of the mentioned",
+    "answer": "A"
+  },
+  {
+    "question": "The property of JSON() method is:",
+    "optionA": "it can be invoked manually as object.JSON()",
+    "optionB": "it will be automatically invoked by the compiler",
+    "optionC": "it is invoked automatically by the JSON.stringify() method",
+    "optionD": " it cannot be invoked in any form",
+    "answer": "D"
+  },
+  {
+    "question":
+      "What are the three important manipulations done in a for loop on a loop variable?",
+    "optionA": "Updation, Incrementation, Initialization",
+    "optionB": "Initialization,Testing, Updation",
+    "optionC": "Testing, Updation, Testing",
+    "optionD": "Initialization,Testing, Incrementation\r\n",
+    "answer": "C"
+  },
+  {
+    "question":
+      "One of the special feature of an interpreter in reference with the for loop is that",
+    "optionA":
+      "Before each iteration, the interpreter evaluates the variable expression and assigns the name of the property",
+    "optionB": "The iterations can be infinite when an interpreter is used",
+    "optionC": "The body of the loop is executed only once",
+    "optionD": "All of the mentioned",
+    "answer": "B"
+  }
+]
