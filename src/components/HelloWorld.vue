@@ -4,9 +4,13 @@
     <h1 v-if="!timeUp">{{ minute }}:{{ second < 10 ? '0' + second : second }}</h1>
     <h1 v-else>Time's up</h1>
   </div>
+  <!-- This is the questions div. Note that the v-for is used to load all the questions and the isCurrent method is used to display the current question -->
   <div class="quiz" :class="{show: isCurrent(i)}" v-for="(question, i) in questions" :key="i">
     <h3>{{ question.question }}</h3>
     <p>
+      <!-- Note the isChecked method. This is used to check if the question has been answered and preselect the answered option -->
+      <!-- The answer method is used to answer the question -->
+      <!-- The name method is used to give a different name to each question, so the preselection is not overridden -->
       <input :checked="isChecked('a')" @change="answer('a')" id="optionA" type="radio" :name="name(i + 1)">
       <label for="optionA">{{ question.optionA }}</label>
     </p>
@@ -23,6 +27,7 @@
       <label for="optionD">{{ question.optionD }}</label>
     </p>
   </div>
+  <!-- The go method is used to go back or go forward -->
   <button @click="go(-1)">PREVIOUS</button>
   <button @click="go(1)">NEXT</button>
 </div>
@@ -57,6 +62,7 @@ export default {
     answer: function(answer){
       let { answers, currentQuestion } = this
 
+      // This gets the index of the current question in the answer array and replaces the previous answer with the new one
       let search = answers.findIndex(answer => {
         return answer.question === currentQuestion
       })
@@ -66,15 +72,18 @@ export default {
       this.answers = answers
     },
     name: function(option){
+      // This returns a unique string for each question
       return `${option}option`
     },
     isChecked: function(option){
+      // This returns true if the answer in the answer array is equal to the option
       return this.answers[this.currentQuestion - 1].answer === option
     }
   },
   mounted(){
     this.questions = questions
 
+    // This is used to populate the answers array with empty strings. Just to make it easier
     for (let i = 0; i < questions.length; i++){
       this.answers.push({ question: i + 1, answer: '' })
     }
